@@ -83,10 +83,16 @@
             <a href="#" class="dropdown-item dropdown-footer">Xem tất cả thông báo</a>
           </div>
         </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
-              class="fas fa-users-large"></i></a>
-          </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/examples/recover-password.html">
+            <i class="fas fa-unlock-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/examples/login.html">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -97,7 +103,7 @@
       <a href="../../index.html" class="brand-link">
         <img src="../../dist/img/AdminLTELogo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">Pet Mark</span>
+        <span class="brand-text font-weight-light">Pet Mart</span>
       </a>
 
       <!-- Sidebar -->
@@ -232,146 +238,151 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <div id="form-disable" style="display:none; max-width: 100%;margin-top: 10px;" >
-                    <div class="form-disable-p1" >
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Hãng</label>
-                                <input type="text" class="form-control" id="category">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Trạng thái</label>
-                                <select name="quyen" id="pet-bread" style="height: 30px;width: 100%;">
-                                    <option value="stocking" selected>Còn kinh doanh</option>
-                                    <option value="CORGI">Ngừng kinh doanh</option>
-                                    <option value="ALASKA">Vừa nhập hàng</option>
-                                </select>
-                            </div>
-                            <div>
-                              <button type="button" class="btn btn-custon-rounded-three btn-success btn-css">
-                                <i class="fas fa-save"></i>
-                                <span> Save</span>
-                              </button>
-                              <button type="button" class="btn btn-custon-rounded-three btn-warning btn-css">
-                                <i class="fas fa-backspace"></i>
-                                <span> Clear</span>
-                              </button>
-                              <button type="button" class="btn btn-custon-rounded-three btn-danger btn-css"
-                                onclick="hienThi(false)">
-                                <i class="fas fa-slash"></i>
-                                <span> Cancel</span>
-                              </button>
-                            </div>
-                        </form>
+                  <div id="form-disable" style="display:none; max-width: 100%;margin-top: 10px;">
+                    <div class="form-disable-p1">
+                      <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Hãng</label>
+                          <input type="text" class="form-control" id="category">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Trạng thái</label>
+                          <select name="quyen" id="pet-bread" style="height: 30px;width: 100%;">
+                            <option value="stocking" selected>Còn kinh doanh</option>
+                            <option value="CORGI">Ngừng kinh doanh</option>
+                            <option value="ALASKA">Vừa nhập hàng</option>
+                          </select>
+                        </div>
+                        <div>
+                          <button type="button" class="btn btn-custon-rounded-three btn-success btn-css">
+                            <i class="fas fa-save"></i>
+                            <span> Save</span>
+                          </button>
+                          <button type="button" class="btn btn-custon-rounded-three btn-warning btn-css">
+                            <i class="fas fa-backspace"></i>
+                            <span> Clear</span>
+                          </button>
+                          <button type="button" class="btn btn-custon-rounded-three btn-danger btn-css"
+                            onclick="hienThi(false)">
+                            <i class="fas fa-slash"></i>
+                            <span> Cancel</span>
+                          </button>
+                        </div>
+                      </form>
                     </div>
                     <div class="clear"></div>
-                </div>
-                <!-- End Form -->
+                  </div>
+                  <!-- End Form -->
 
-                <div class="btn-new-css">
-                  <button id="new-pet" type="button" class="btn btn-custon-rounded-three btn-primary"
-                    style="display: block;" onclick="hienThi(true)">
-                    <i class="fas fa-plus-circle"></i>
-                    <span> Thêm mới</span>
-                  </button>
-                </div>
+                  <div class="btn-new-css">
+                    <button id="new-pet" type="button" class="btn btn-custon-rounded-three btn-primary"
+                      style="display: block;" onclick="hienThi(true)">
+                      <i class="fas fa-plus-circle"></i>
+                      <span> Thêm mới</span>
+                    </button>
+                  </div>
                   <!-- End Thêm mới-->
 
                   <div class="table-responsive-xl main-table">
                     <table class="table" style="margin-bottom: -1%;">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">STT</th>
-                                <th scope="col">Hãng phụ kiện</th>
-                                <th scope="col">Trạng thái</th>
-                                <th scope="col">Hành động</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="td-center" style="padding-top: 2.5%;">1</th>
-                                <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"onclick="hienThi(true)">ANF</a></td>
-                                <td class="td-center" style="padding-top: 2.5%;">Còn kinh doanh</td>
-                                <td class="td-center" style="padding-top: 2%;">
-                                  <button type="button" class="btn btn-custon-rounded-three btn-danger">
-                                    <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
-                                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="td-center" style="padding-top: 2.5%;">2</th>
-                                <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"onclick="hienThi(true)">GANADO</a></td>
-                                <td class="td-center" style="padding-top: 2.5%;">Còn kinh doanh</td>
-                                <td class="td-center" style="padding-top: 2%;">
-                                  <button type="button" class="btn btn-custon-rounded-three btn-danger">
-                                    <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
-                                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="td-center" style="padding-top: 30px;">3</th>
-                                <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"onclick="hienThi(true)">CITY ZOO</a></td>
-                                <td class="td-center" style="padding-top: 30px;">Còn kinh doanh</td>
-                                <td class="td-center" style="padding-top: 2%;">
-                                  <button type="button" class="btn btn-custon-rounded-three btn-danger">
-                                    <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
-                                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="td-center" style="padding-top: 30px;">4</th>
-                                <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"onclick="hienThi(true)">FORCAN</a></td>
-                                <td class="td-center" style="padding-top: 30px;">Mới nhập</td>
-                                <td class="td-center" style="padding-top: 2%;">
-                                  <button type="button" class="btn btn-custon-rounded-three btn-danger">
-                                    <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
-                                  </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="td-center" style="padding-top: 30px;">5</th>
-                                <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"onclick="hienThi(true)">PUG</a></td>
-                                <td class="td-center" style="padding-top: 30px;">Còn hàng</td>
-                                <td class="td-center" style="padding-top: 2%;">
-                                  <button type="button" class="btn btn-custon-rounded-three btn-danger">
-                                    <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
-                                  </button>
-                                </td>
-                            </tr>
-                        </tbody>
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col">STT</th>
+                          <th scope="col">Hãng phụ kiện</th>
+                          <th scope="col">Trạng thái</th>
+                          <th scope="col">Hành động</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="td-center" style="padding-top: 2.5%;">1</th>
+                          <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"
+                              onclick="hienThi(true)">ANF</a></td>
+                          <td class="td-center" style="padding-top: 2.5%;">Còn kinh doanh</td>
+                          <td class="td-center" style="padding-top: 2%;">
+                            <button type="button" class="btn btn-custon-rounded-three btn-danger">
+                              <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="td-center" style="padding-top: 2.5%;">2</th>
+                          <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"
+                              onclick="hienThi(true)">GANADO</a></td>
+                          <td class="td-center" style="padding-top: 2.5%;">Còn kinh doanh</td>
+                          <td class="td-center" style="padding-top: 2%;">
+                            <button type="button" class="btn btn-custon-rounded-three btn-danger">
+                              <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="td-center" style="padding-top: 30px;">3</th>
+                          <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"
+                              onclick="hienThi(true)">CITY ZOO</a></td>
+                          <td class="td-center" style="padding-top: 30px;">Còn kinh doanh</td>
+                          <td class="td-center" style="padding-top: 2%;">
+                            <button type="button" class="btn btn-custon-rounded-three btn-danger">
+                              <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="td-center" style="padding-top: 30px;">4</th>
+                          <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"
+                              onclick="hienThi(true)">FORCAN</a></td>
+                          <td class="td-center" style="padding-top: 30px;">Mới nhập</td>
+                          <td class="td-center" style="padding-top: 2%;">
+                            <button type="button" class="btn btn-custon-rounded-three btn-danger">
+                              <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="td-center" style="padding-top: 30px;">5</th>
+                          <td class="td-center" style="padding-top: 2.5%;"><a href="javascript:"
+                              onclick="hienThi(true)">PUG</a></td>
+                          <td class="td-center" style="padding-top: 30px;">Còn hàng</td>
+                          <td class="td-center" style="padding-top: 2%;">
+                            <button type="button" class="btn btn-custon-rounded-three btn-danger">
+                              <i class="fas fa-ban"></i><span> Ngừng kinh doanh</span>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
                     </table>
                     <hr>
-                </div>
-                <!--End Table-->
-                <div class="row">
-                  <div class="col-12 col-sm-6 col-md-3">
                   </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-3">
-                    <div class="pagination-main" style="padding-left:70px;">
-                      <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
+                  <!--End Table-->
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3">
                     </div>
-                    <!-- End Page Navigation -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                      <div class="pagination-main" style="padding-left:70px;">
+                        <nav aria-label="Page navigation example">
+                          <ul class="pagination">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                      <!-- End Page Navigation -->
+                    </div>
                   </div>
-                </div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -390,7 +401,7 @@
       <div class="float-right d-none d-sm-block">
         <b>Version</b> 1.0.0
       </div>
-      <strong>Copyright &copy; 2020 <a href="http://adminlte.io">Petmark </a>.</strong> All rights
+      <strong>Copyright &copy; 2020 <a href="http://adminlte.io">Petmart </a>.</strong> All rights
       reserved.
     </footer>
 
