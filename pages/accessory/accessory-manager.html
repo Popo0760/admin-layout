@@ -239,8 +239,7 @@
             <div class="card card-default color-palette-box">
               <div class="card-header">
                 <h3 class="card-title">
-                  <i class="fab fa-simplybuilt"></i>
-                  Quản lý phụ kiện
+                  <i class="fab fa-simplybuilt"></i> Quản lý phụ kiện
                 </h3>
               </div>
               <div class="card-body">
@@ -285,14 +284,18 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlInput1">Màu sắc</label>
+                        <label for="exampleFormControlInput1">Số lượng</label>
                         <input
-                          name="mauPhuKien"
+                          name="soLuongPhuKien"
                           type="text"
                           class="form-control"
-                          id="accessoriColor"
+                          id="accessoriAmount"
                         />
                       </div>
+                      <!-- <div class="form-group">
+                                            <label for="exampleFormControlInput1">Màu sắc</label>
+                                            <input name="mauPhuKien" type="text" class="form-control" id="accessoriColor" />
+                                        </div> -->
                     </div>
                     <div
                       class="form-disable-p1"
@@ -324,15 +327,6 @@
                           <option value="PUG">Hết hàng</option>
                         </select>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlInput1">Số lượng</label>
-                        <input
-                          name="soLuongPhuKien"
-                          type="text"
-                          class="form-control"
-                          id="accessoriAmount"
-                        />
-                      </div>
                     </div>
                     <div
                       class="form-disable-p1"
@@ -347,9 +341,8 @@
                           rows="2"
                         ></textarea>
                       </div>
-                      <div class="custom-file mb-3">
-                        <label class="custom-file-label" for="customFile"
-                          >Hình ảnh</label
+                      <!-- <div class="custom-file mb-3">
+                                            <label class="custom-file-label" for="customFile">Hình ảnh</label
                         >
                         <input
                           type="file"
@@ -357,21 +350,22 @@
                           id="customFile"
                           name="filename"
                         />
-                      </div>
+                      </div> -->
                       <div>
                         <button
                           type="button"
                           class="btn btn-custon-rounded-three btn-success btn-css"
                         >
                           <i class="fas fa-save"></i>
-                          <span> Save</span>
+                          <span> Lưu</span>
                         </button>
                         <button
                           type="button"
                           class="btn btn-custon-rounded-three btn-warning btn-css"
+                          onclick="showFormUpdateColor(true)"
                         >
-                          <i class="fas fa-backspace"></i>
-                          <span> Clear</span>
+                          <i class="fas fa-folder-plus"></i>
+                          <span> Thêm</span>
                         </button>
                         <button
                           type="button"
@@ -379,7 +373,7 @@
                           onclick="hiddenFormUpdate(true)"
                         >
                           <i class="fas fa-slash"></i>
-                          <span> Cancel</span>
+                          <span> Hủy</span>
                         </button>
                       </div>
                     </div>
@@ -409,14 +403,14 @@
                           name="tenPhuKien"
                           type="text"
                           class="form-control"
-                          id="accessoriName"
+                          id="accessoriNameUpdate"
                         />
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">Hãng</label>
                         <select
                           name="hangPhuKien"
-                          id="category"
+                          id="categoryUpdate"
                           style="height: 30px; width: 100%"
                         >
                           <option value="GANADO" selected>GANADO</option>
@@ -432,7 +426,7 @@
                           name="giaPhuKien"
                           type="text"
                           class="form-control"
-                          id="accessoriPrice"
+                          id="accessoriPriceUpdate"
                         />
                       </div>
                     </div>
@@ -446,7 +440,7 @@
                         >
                         <select
                           name="trangThaiPhuKien"
-                          id="accessori-status"
+                          id="accessori-status-update"
                           style="height: 30px; width: 100%"
                         >
                           <option value="stocking" selected>
@@ -463,7 +457,7 @@
                           name="soLuongPhuKien"
                           type="text"
                           class="form-control"
-                          id="accessoriAmount"
+                          id="accessoriAmountUpdate"
                         />
                       </div>
                     </div>
@@ -486,14 +480,14 @@
                           class="btn btn-custon-rounded-three btn-success btn-css"
                         >
                           <i class="fas fa-save"></i>
-                          <span> Save</span>
+                          <span> Lưu</span>
                         </button>
                         <button
                           type="button"
                           class="btn btn-custon-rounded-three btn-warning btn-css"
                         >
                           <i class="fas fa-backspace"></i>
-                          <span> Clear</span>
+                          <span> Xóa</span>
                         </button>
                         <button
                           type="button"
@@ -501,7 +495,7 @@
                           onclick="hienThiFormNew(false)"
                         >
                           <i class="fas fa-slash"></i>
-                          <span> Cancel</span>
+                          <span> Hủy</span>
                         </button>
                       </div>
                     </div>
@@ -509,6 +503,30 @@
                   <div class="clear"></div>
                 </div>
                 <!-- End new Form -->
+
+                <!--Div update color-->
+                <div id="form-disable-update-color" style="display:none; max-width: 95%; margin: auto;float: left;margin-left: 2em;">
+                  <div class="form-disable-p1 form-group" style="width: 330px; margin-left: 30px; float: left">
+                      <label for="exampleFormControlInput1">Màu sắc</label>
+                      <input type="text" class="form-control" id="mauPK" name="mauPK">
+                  </div>
+                  <div class="form-disable-p1 form-group" style="width: 330px;margin-left: 30px;float: left;">
+                      <label for="exampleFormControlInput1">Kích thước</label>
+                      <input type="text" class="form-control" id="kichThuoc" name="kichThuoc">
+                  </div>
+                  <div class="form-disable-p1" id="chooseImage" class="rox" style="width: 330px;margin-left: 30px;float: left;">
+                      <div>
+                          <label for="exampleFormControlInput1">Chọn hình ảnh</label>
+                          <input type="file" id="fileInput" style="margin-bottom: 20px;">
+                      </div>
+                  </div>
+                  <div class="container js-file-list"></div>
+                  <div style="margin-left: 30px;float: right; margin-top: 10px;">
+                      <button class="btn btn-primary" style="margin-bottom: 10px;">Lưu</button>
+                  </div>
+                  <div class="clear"></div>
+              </div>
+              <!--End div update color-->
                 <div id="new-pet">
                   <div class="row">
                     <div class="col-12">
@@ -516,11 +534,20 @@
                         <div class="form-row">
                           <div class="form-group col-2">
                             <label for="exampleFormControlSelect1">Tên</label>
-                            <input class="form-control" type="search" placeholder="Tìm kiếm theo tên" aria-label="Search">
+                            <input
+                              class="form-control"
+                              type="search"
+                              placeholder="Tìm kiếm theo tên"
+                              aria-label="Search"
+                            />
                           </div>
                           <div class="form-group col-2">
                             <label for="exampleFormControlSelect1">Hãng</label>
-                            <select class="form-control" id="locGiong" style="max-width: 150px;">
+                            <select
+                              class="form-control"
+                              id="locGiong"
+                              style="max-width: 150px"
+                            >
                               <option>HUSKY</option>
                               <option>CORGI</option>
                               <option>MUNCHKIN</option>
@@ -529,7 +556,11 @@
                           </div>
                           <div class="form-group col-2">
                             <label for="exampleFormControlSelect1">Màu</label>
-                            <select class="form-control" id="locMauLong" style="max-width: 150px;">
+                            <select
+                              class="form-control"
+                              id="locMauLong"
+                              style="max-width: 150px"
+                            >
                               <option>Vàng</option>
                               <option>Trắng</option>
                               <option>Đen</option>
@@ -537,12 +568,18 @@
                             </select>
                           </div>
                           <div class="form-group col-2">
-                            <label for="exampleFormControlSelect1">Trạng thái</label>
-                            <select class="form-control" id="locTrangThai" style="max-width: 150px;">
+                            <label for="exampleFormControlSelect1"
+                              >Trạng thái</label
+                            >
+                            <select
+                              class="form-control"
+                              id="locTrangThai"
+                              style="max-width: 150px"
+                            >
                               <option selected>Vẫn còn hàng</option>
-                            <option >Ngừng kinh doanh</option>
-                            <option >Vừa nhập hàng</option>
-                            <option>Hết hàng</option>
+                              <option>Ngừng kinh doanh</option>
+                              <option>Vừa nhập hàng</option>
+                              <option>Hết hàng</option>
                             </select>
                           </div>
                         </div>
@@ -550,8 +587,12 @@
                     </div>
                   </div>
                   <div class="btn-new-css">
-                    <button  type="button" class="btn btn-custon-rounded-three btn-primary"
-                      style="display: block;" onclick="hienThiFormNew(true)">
+                    <button
+                      type="button"
+                      class="btn btn-custon-rounded-three btn-primary"
+                      style="display: block"
+                      onclick="hienThiFormNew(true)"
+                    >
                       <i class="fas fa-plus-circle"></i>
                       <span> Thêm mới</span>
                     </button>
@@ -560,7 +601,7 @@
                 </div>
 
                 <div class="table-responsive-xl main-table">
-                  <table class="table" style="margin-bottom: -1%">
+                  <table id="table-js" class="table" style="margin-bottom: -1%">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">STT</th>
@@ -593,9 +634,9 @@
                           />
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">
-                          <a href="javascript:" onclick="showFormUpdate(true)"
-                            >Vòng cổ chuông cho Mèo</a
-                          >
+                          <div onclick="showFormUpdate(true)" class="div-a">
+                            Vòng cổ chuông cho Mèo
+                          </div>
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">
                           CITY ZOO
@@ -640,9 +681,9 @@
                           />
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">
-                          <a href="javascript:" onclick="showFormUpdate(true)"
-                            >Litter Robot 3</a
-                          >
+                          <div onclick="showFormUpdate(true)" class="div-a">
+                            Litter Robot 3
+                          </div>
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">ANF</td>
                         <td class="td-center" style="padding-top: 2.5%">Xám</td>
@@ -685,9 +726,9 @@
                           />
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">
-                          <a href="javascript:" onclick="showFormUpdate(true)"
-                            >Dây dắt chó mèo</a
-                          >
+                          <div onclick="showFormUpdate(true)" class="div-a">
+                            Dây dắt chó mèo
+                          </div>
                         </td>
                         <td class="td-center" style="padding-top: 30px">
                           FORCAN
@@ -732,9 +773,9 @@
                           />
                         </td>
                         <td class="td-center" style="padding-top: 2.5%">
-                          <a href="javascript:" onclick="showFormUpdate(true)"
-                            >Thức ăn dạng viên cho chó Ganado</a
-                          >
+                          <div onclick="showFormUpdate(true, 4)" class="div-a">
+                            Thức ăn dạng viên cho chó Ganado
+                          </div>
                         </td>
                         <td class="td-center" style="padding-top: 30px">
                           GANADO
@@ -865,19 +906,44 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
     <script type="text/javascript">
+      var x = [];
+      $("#table-js tr").each(function () {
+        var id = $(this).find("th").eq(0).html();
+        var ten = $(this).find("a").eq(0).html();
+        var hang = $(this).find("td").eq(2).html();
+        var mau = $(this).find("td").eq(3).html();
+        var gia = $(this).find("td").eq(4).html();
+        var soLuong = $(this).find("td").eq(5).html();
+        var stt = $(this).find("td").eq(6).html();
+        var date = $(this).find("td").eq(7).html();
+        x.push({
+          id: id,
+          ten: ten,
+          hang: hang,
+          mau: mau,
+          gia: gia,
+          soLuong: soLuong,
+          stt: stt,
+          date: date,
+        });
+        console.log(x);
+      });
       function hienThiFormNew(visible) {
         var hienFormNew = document.getElementById("form-disable-new");
         hienFormNew.style.display = visible ? "" : "none";
         var timKiem = document.getElementById("new-pet");
         timKiem.style.display = visible ? "none" : "block";
       }
-      function showFormUpdate(visible) {
+      function showFormUpdate(visible, id) {
         var hienFormUpdate = document.getElementById("form-disable-update");
         hienFormUpdate.style.display = visible ? "" : "none";
         var timKiem = document.getElementById("new-pet");
         timKiem.style.display = visible ? "none" : "block";
         var hienFormNew = document.getElementById("form-disable-new");
         hienFormNew.style.display = visible ? "none" : "block";
+
+        var pet = x.find((pet) => (pet.id = id));
+        console.log(id);
       }
       function hiddenFormUpdate(visible) {
         var hienFormUpdate = document.getElementById("form-disable-update");
@@ -885,6 +951,32 @@
         var timKiem = document.getElementById("new-pet");
         timKiem.style.display = visible ? "" : "none";
       }
+
+      function showFormUpdateColor(visible) {
+            var hienThiColor = document.getElementById("form-disable-update-color");
+            hienThiColor.style.display = visible ? "" : "none";
+        }
+
+      $(document).ready(function () {
+        $("#fileInput").on("change", function () {
+          var files = $(this)[0].files;
+
+          for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var fileReader = new FileReader();
+            fileReader.onload = function () {
+              var str =
+                '<img class="img-thumbnail js-file-image"  style="width: 100px; height: 100px; margin-left: 10px; margin-bottom: 10px; margin:0 auto">';
+
+              $(".js-file-list").append(str);
+
+              var imageSrc = event.target.result;
+              $(".js-file-image").last().attr("src", imageSrc);
+            };
+            fileReader.readAsDataURL(file);
+          }
+        });
+      });
     </script>
   </body>
 </html>
