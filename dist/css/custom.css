@@ -1,27 +1,83 @@
-.main-table{
+.main-table {
     margin: auto;
 }
-.btn-css{
-    margin-left: 1%;;
+
+.btn-css {
+    margin-left: 1%;
+    ;
 }
-.btn-new-css{
+
+.btn-new-css {
     float: right;
     padding-bottom: 10px;
 }
-.th-css{
-text-align: center;
+
+.th-css {
+    text-align: center;
 }
-.td-em-css{
+
+.td-em-css {
     text-align: center;
     margin-top: 8em;
 }
-.pagination-main{
+
+.pagination-main {
     padding-top: 10px;
     float: right;
 }
-.form-disable-p1{
-    max-width: 400px;margin-left: 30px; margin: auto; margin-bottom: 10px;
+
+.form-disable-p1 {
+    max-width: 400px;
+    margin-left: 30px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.a-edit {
+    text-decoration: none;
+}
+
+.a-edit:hover {
+    color: greenyellow;
+}
+
+.profile-update {
+    text-align: center;
+}
+
+.login-title {
+    font-weight: bold;
+    color: darkgreen;
+    text-align: center;
+    text-shadow: 2px 2px darkgrey;
+    padding-top: 20px;
 }
 
 
+/* .login-box {
+    max-width: 550px;
+} */
 
+.card-css {
+    max-width: 700px;
+}
+
+.img-fluid {
+    max-width: 250px;
+}
+
+.edit-image-link {
+    font-size: 17px;
+}
+
+.div-a {
+    color: blue;
+}
+
+#dvPreview
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+    min-height: 250px;
+    min-width: 250px;
+    display: none;
+}
